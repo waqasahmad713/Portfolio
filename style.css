@@ -204,5 +204,16 @@ footer{
   padding-left:10px;
   border-left:2px solid cyan;
 }
+.project-card h4{
+  color:#00ffff;
+  font-size:14px;
+  margin-top:5px;
+  font-weight:normal;
+}
 
+.project-card p{
+  color:#cfd3ff;
+  font-size:13.5px;
+  margin-top:6px;
+}
 
