@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Waqas | AI Engineer</title>
+
+  <link rel="stylesheet" href="style.css">
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Particles (tsParticles) -->
+  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+</head>
+
+<body>
+
+<!-- PARTICLE BACKGROUND -->
+<div id="tsparticles"></div>
+
+<!-- NAVBAR -->
+<header>
+  <div class="logo">Waqas AI</div>
+  <ul class="nav">
+    <li><a href="#home">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</header>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="glass hero-box">
+    <img src="waqasetea.png" class="profile" alt="profile">
+
+    <h1>Waqas Ahmad</h1>
+    <h2><span id="typing"></span></h2>
+
+    <p>
+      AI Engineer specializing in Computer Vision, Deep Learning, YOLO & LSTM systems.
+    </p>
+
+    <div class="buttons">
+      <a href="#contact" class="btn">Contact</a>
+      <a href="Waqas_Ahmad.pdf" class="btn outline">Download CV</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="section">
+  <div class="glass box">
+    <h2>About Me</h2>
+    <p>
+      AI and Machine Learning Engineer specializing in Deep Learning and Computer Vision. Experienced in building
+      real-world AI systems including autonomous driving, predictive modeling, and object detection pipelines. Currently
+      working as an AI Developer at CAIET Mardan after completing an internship at NCAI Lab Peshawar.
+    </p>
+  </div>
+</section>
+
+<!-- SKILLS -->
+ <!-- SKILLS -->
+<section id="skills" class="section">
+  <div class="glass box">
+
+    <h2>Technical Skills</h2>
+
+    <div class="skills-text">
+
+      <h3>Machine Learning & Deep Learning</h3>
+      <p>
+        CNNs, RNNs, LSTM, YOLOv8/v11, Transfer Learning, Neural Network Architectures
+      </p>
+
+      <h3>Programming Languages</h3>
+      <p>
+        Python (Pandas, NumPy, Scikit-learn), HTML, CSS, JavaScript, SQL
+      </p>
+
+      <h3>Frameworks & Tools</h3>
+      <p>
+        TensorFlow, PyTorch, OpenCV, Flask, Roboflow, Git, Jupyter Notebook, Google Colab
+      </p>
+
+      <h3>Soft Skills</h3>
+      <p>
+        Team Leadership, Project Coordination, Technical Communication, Problem Solving, Research Thinking
+      </p>
+
+    </div>
+
+  </div>
+</section>
+<section id="skills" class="section">
+  <div class="glass box">
+    <h2>Skills</h2>
+    <canvas id="skillsChart"></canvas>
+  </div>
+</section>
+<!-- EXPERIENCE -->
+<section id="experience" class="section">
+  <div class="glass box">
+
+    <h2>Experience</h2>
+
+    <div class="grid">
+
+      <!-- AI Intern -->
+      <div class="card project-card">
+        <div class="project-icon">🧠</div>
+        <h3>AI Intern</h3>
+        <h4>NCAI Lab Peshawar</h4>
+        <p>Developed AI-based research and real-world computer vision systems</p>
+        <p>Worked on deep learning pipelines and model optimization</p>
+      </div>
+
+      <!-- Python Intern -->
+      <div class="card project-card">
+        <div class="project-icon">🐍</div>
+        <h3>Python Intern</h3>
+        <h4>Codsoft</h4>
+        <p>Built Python-based automation and ML mini-projects</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- PROJECTS -->
+<<!-- PROJECTS -->
+<section id="projects" class="section">
+  <div class="glass box">
+
+    <h2>Projects</h2>
+
+    <div class="grid">
+
+      <!-- Self Driving Car -->
+      <div class="card project-card">
+        <div class="project-icon">🚗</div>
+        <h3>AI-Based Self-Driving Car (FYP)</h3>
+        <p>Designed autonomous driving system using CNN and OpenCV</p>
+        <p>Implemented lane detection, object recognition, and decision-making module</p>
+      </div>
+
+      <!-- Weather -->
+      <div class="card project-card">
+        <div class="project-icon">⛅</div>
+        <h3>Weather Forecasting System</h3>
+        <p>Developed LSTM-based time series prediction model</p>
+        <p>Integrated Flask backend for real-time web deployment</p>
+      </div>
+
+      <!-- Agriculture -->
+      <div class="card project-card">
+        <div class="project-icon">🌱</div>
+        <h3>Nutrient Deficiency Detection System</h3>
+        <p>Built YOLOv11 model for 9-class banana plant disease detection</p>
+      </div>
+
+      <!-- Smart Parking -->
+      <div class="card project-card">
+        <div class="project-icon">🅿️</div>
+        <h3>Smart Parking System</h3>
+        <p>Implemented OpenCV-based vehicle detection and parking automation system</p>
+      </div>
+
+      <!-- Fight Detection -->
+      <div class="card project-card">
+        <div class="project-icon">🥊</div>
+        <h3>Fight Detection System</h3>
+        <p>Developed real-time violence detection using deep learning and video analysis</p>
+      </div>
+
+      <!-- Face Mask -->
+      <div class="card project-card">
+        <div class="project-icon">😷</div>
+        <h3>Face Mask Detection</h3>
+        <p>Built CNN-based model for real-time face mask detection system</p>
+      </div>
+
+      <!-- Road Damage (C&W KPK) -->
+      <div class="card project-card">
+        <div class="project-icon">🛣️</div>
+        <h3>Road Pothole & Crack Detection (C&W KPK)</h3>
+        <p>Worked on pothole and road crack detection system for infrastructure monitoring</p>
+      </div>
+
+      <!-- Weapon & FIR Detection -->
+      <div class="card project-card">
+        <div class="project-icon">🔫</div>
+        <h3>Weapon & FIR Detection System</h3>
+        <p>Developed AI-based system for weapon detection and FIR-related monitoring</p>
+      </div>
+
+      <!-- Flood Report -->
+      <div class="card project-card">
+        <div class="project-icon">🌊</div>
+        <h3>KP Flash Floods Technical Report (Aug 2025)</h3>
+        <p>Prepared technical analysis report on KP flood events and impact assessment</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+<!-- LEADERSHIP & CERTIFICATIONS -->
+<section id="leadership" class="section">
+  <div class="glass box">
+
+    <h2>Leadership & Certifications</h2>
+
+    <div class="grid">
+
+      <!-- Leadership -->
+      <div class="card project-card">
+        <div class="project-icon">🏆</div>
+        <h3>Leadership</h3>
+
+        <h4>Coordinator — Technology & Innovation Society</h4>
+        <p>Led technical workshops and managed events for 200+ students</p>
+
+        <h4>Co-Founder — University Help Desk</h4>
+        <p>Developed support system serving 600+ students across departments</p>
+      </div>
+
+      <!-- Certifications -->
+      <div class="card project-card">
+        <div class="project-icon">📜</div>
+        <h3>Certifications</h3>
+
+        <p>CS50’s Introduction to AI with Python — Harvard University</p>
+        <p>Programming for Everybody (Python) — Coursera</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="section">
+  <div class="glass box">
+    <h2>Contact</h2>
+    <p>Email: waqaskhanwaqas713@gmail.com</p>
+    <p>GitHub: github.com/waqasahmad713</p>
+    <p>LinkedIn: waqasahmad713</p>
+  </div>
+</section>
+
+<footer>
+  <p>© 2026 Waqas AI Engineer</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
+
+
