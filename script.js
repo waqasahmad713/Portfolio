@@ -50,53 +50,29 @@ tsParticles.load("tsparticles", {
 });
 
 
-// Skills Chart
-const ctx = document.getElementById("skillsChart");
+// Skills Chart (doughnut)
+const ctx = document.getElementById("skillsChart").getContext('2d');
 new Chart(ctx, {
-  type: "doughnut",
+  type: 'doughnut',
   data: {
-    labels: ["Python", "Pandas", "NumPy", "ML", "TensorFlow", "PyTorch", "OpenCV", "YOLO", "Data Labeling", "Annotation"],
+    labels: ["Python","Pandas","NumPy","Machine Learning","TensorFlow","PyTorch","OpenCV","YOLO","Data Labeling","Annotation"],
     datasets: [{
-      data: [95, 92, 88, 90, 85, 80, 90, 88, 90, 88],
+      data: [95,92,88,90,85,80,90,88,90,88],
       backgroundColor: [
-        "#22d3ee",
-        "#60a5fa",
-        "#818cf8",
-        "#38bdf8",
-        "#a855f7",
-        "#7c3aed",
-        "#ec4899",
-        "#f43f5e",
-        "#14b8a6",
-        "#06b6d4"
+        '#06b6d4','#0891b2','#0ea5a1','#34d399','#60a5fa','#7c3aed','#06b6d4','#0891b2','#22d3ee','#60a5fa'
       ],
-      borderWidth: 0,
-      hoverOffset: 14,
+      hoverOffset: 8,
+      cutout: '60%'
     }]
   },
   options: {
-    cutout: "60%",
     plugins: {
-      legend: {
-        position: "bottom",
-        labels: {
-          color: "#e2e8f0",
-          boxWidth: 14,
-          padding: 16,
-          usePointStyle: true,
-        }
-      },
-      tooltip: {
-        backgroundColor: "rgba(15, 23, 42, 0.95)",
-        titleColor: "#ffffff",
-        bodyColor: "#cbd5e1",
-        borderColor: "rgba(34, 211, 238, 0.2)",
-        borderWidth: 1,
-      }
-    }
+      legend: { position: 'bottom', labels: { boxWidth: 12, padding: 12 } }
+    },
+    responsive: true,
+    maintainAspectRatio: false
   }
 });
-
 
 
 
