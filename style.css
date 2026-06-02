@@ -257,6 +257,22 @@ header {
   line-height: 1.8;
 }
 
+.skill-tags {
+  margin-top: 12px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skill-tags span {
+  background: linear-gradient(90deg,#0ea5a1, #22d3ee);
+  color: #042027;
+  padding: 6px 10px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.85rem;
+}
+
 .skill-bars {
   display: grid;
   gap: 18px;
