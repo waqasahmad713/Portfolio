@@ -3,563 +3,340 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Waqas | AI Engineer</title>
-
-  <link rel="stylesheet" href="style.css">
-
-  <!-- Chart.js -->
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
-  <!-- Particles (tsParticles) -->
-  <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+  <meta name="description" content="Waqas Ahmad — AI Engineer specializing in Machine Learning, Deep Learning, and Computer Vision systems.">
+  <title>Waqas Ahmad — AI Engineer</title>
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
-
 <body>
-
-<!-- PARTICLE BACKGROUND -->
-<div id="tsparticles"></div>
-
-<!-- NAVBAR -->
-<header>
-  <div class="logo">Waqas AI</div>
-  <ul class="nav">
-    <li><a href="#home">Home</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#skills">Skills</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</header>
-
-<!-- HERO -->
-<section id="home" class="hero">
-  <div class="glass hero-box">
-    <img src="waqasetea.png" class="profile" alt="profile">
-
-    <h1>Waqas Ahmad</h1>
-    <h2><span id="typing"></span></h2>
-
-    <p>
-      AI Engineer specializing in Computer Vision, Deep Learning, YOLO & LSTM systems.
-    </p>
-
-    <div class="buttons">
-      <a href="#contact" class="btn">Contact</a>
-      <a href="Waqas_Ahmad.pdf" class="btn outline">Download CV</a>
-    </div>
+  <div class="page-loader" id="page-loader" aria-hidden="true">
+    <div class="loader-core"></div>
+    <p>Initializing systems…</p>
   </div>
-</section>
 
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="glass box">
-    <h2>About Me</h2>
-    <p>
-      AI and Machine Learning Engineer specializing in Deep Learning and Computer Vision. Experienced in building
-      real-world AI systems including autonomous driving, predictive modeling, and object detection pipelines. Currently
-      working as an AI Developer at CAIET Mardan after completing an internship at NCAI Lab Peshawar.
-    </p>
+  <div class="cursor-dot" hidden></div>
+  <div class="cursor-ring" hidden></div>
+
+  <div class="site-bg" aria-hidden="true">
+    <div class="bg-grid"></div>
+    <div class="bg-blob bg-blob-a"></div>
+    <div class="bg-blob bg-blob-b"></div>
+    <div class="bg-blob bg-blob-c"></div>
+    <canvas id="particle-canvas"></canvas>
   </div>
-</section>
+  <div class="mouse-glow" hidden></div>
 
-<!-- SKILLS -->
-<section id="skills" class="section">
-  <div class="glass box skills-box">
-    <div class="skills-header">
-      <h2>Technical Skills</h2>
-      <p>Hands-on experience in AI and software development with strong skills in model building, computer vision, and system integration.</p>
-    </div>
+  <aside class="social-rail" aria-label="Social">
+    <a id="github-link" href="https://github.com/waqasahmad713" target="_blank" rel="noopener noreferrer" aria-label="GitHub">
+      <svg viewBox="0 0 24 24"><path fill="currentColor" d="M12 2C6.48 2 2 6.58 2 12.26c0 4.52 2.87 8.36 6.84 9.72.5.1.68-.22.68-.49 0-.24-.01-.87-.01-1.71-2.78.62-3.37-1.37-3.37-1.37-.45-1.18-1.11-1.5-1.11-1.5-.91-.64.07-.63.07-.63 1 .07 1.53 1.06 1.53 1.06.9 1.57 2.36 1.12 2.94.86.09-.67.35-1.12.63-1.38-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.71 0 0 .84-.27 2.75 1.05A9.3 9.3 0 0 1 12 6.84c.85 0 1.7.12 2.5.35 1.9-1.32 2.74-1.05 2.74-1.05.55 1.41.2 2.45.1 2.71.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.81 0 .27.18.6.69.49A10.03 10.03 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+    </a>
+    <a id="linkedin-link" href="https://www.linkedin.com/in/waqasahmad713" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
+      <svg viewBox="0 0 24 24"><path fill="currentColor" d="M6.94 8.5H3.89V20h3.05V8.5ZM5.4 3.5A1.77 1.77 0 1 0 5.41 7a1.77 1.77 0 0 0-.01-3.5ZM20.1 20h-3.04v-5.6c0-1.34-.02-3.06-1.86-3.06-1.86 0-2.15 1.45-2.15 2.96V20H10v-11.5h2.92v1.57h.04c.4-.77 1.4-1.58 2.88-1.58 3.08 0 3.65 2.03 3.65 4.67V20Z"/></svg>
+    </a>
+    <a id="mail-rail" href="mailto:waqaskhanwaqas713@gmail.com" aria-label="Email">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m4 7 8 6 8-6"/></svg>
+    </a>
+  </aside>
 
-    <div class="skills-layout">
-      <div class="skill-cards">
-        <article class="skill-card">
-          <div class="skill-icon">🤖</div>
-          <h3>AI & Deep Learning</h3>
-          <p>CNNs, RNNs, LSTM, YOLOv8/v11, transfer learning, neural network architectures.</p>
-          <div class="skill-tags">
-            <span>Deep Learning</span>
-            <span>YOLO</span>
-            <span>LSTM</span>
-            <span>Transfer Learning</span>
-          </div>
-        </article>
-        <article class="skill-card">
-          <div class="skill-icon">📊</div>
-          <h3>Data Science & ML</h3>
-          <p>Pandas, NumPy, Scikit-learn, data labeling, annotation, feature engineering.</p>
-          <div class="skill-tags">
-            <span>Pandas</span>
-            <span>NumPy</span>
-            <span>Data Labeling</span>
-            <span>Annotation</span>
-          </div>
-        </article>
-        <article class="skill-card">
-          <div class="skill-icon">💻</div>
-          <h3>Programming</h3>
-          <p>Python, JavaScript, HTML, CSS, SQL, scripting, automation, data processing.</p>
-          <div class="skill-tags">
-            <span>Python</span>
-            <span>Git</span>
-            <span>Automation</span>
-            <span>Flask</span>
-          </div>
-        </article>
-      </div>
-
-      <div class="skill-bars">
-        <div class="skill-row">
-          <span>Python</span>
-          <div class="bar-wrap"><span class="bar-fill" style="width: 95%"></span></div>
-          <span class="skill-percent">95%</span>
-        </div>
-        <div class="skill-row">
-          <span>Machine Learning</span>
-          <div class="bar-wrap"><span class="bar-fill" style="width: 90%"></span></div>
-          <span class="skill-percent">90%</span>
-        </div>
-        <div class="skill-row">
-          <span>Pandas</span>
-          <div class="bar-wrap"><span class="bar-fill" style="width: 92%"></span></div>
-          <span class="skill-percent">92%</span>
-        </div>
-        <div class="skill-row">
-          <span>NumPy</span>
-          <div class="bar-wrap"><span class="bar-fill" style="width: 88%"></span></div>
-          <span class="skill-percent">88%</span>
-        </div>
-        <div class="skill-row">
-          <span>TensorFlow</span>
-          <div class="bar-wrap"><span class="bar-fill" style="width: 85%"></span></div>
-          <span class="skill-percent">85%</span>
-        </div>
-        <div class="skill-row">
-          <span>PyTorch</span>
-          <div class="bar-wrap"><span class="bar-fill" style="width: 80%"></span></div>
-          <span class="skill-percent">80%</span>
-        </div>
-        <div class="skill-row">
-          <span>OpenCV</span>
-          <div class="bar-wrap"><span class="bar-fill" style="width: 90%"></span></div>
-          <span class="skill-percent">90%</span>
-        </div>
-        <div class="skill-row">
-          <span>YOLO</span>
-          <div class="bar-wrap"><span class="bar-fill" style="width: 88%"></span></div>
-          <span class="skill-percent">88%</span>
-        </div>
-        <div class="skill-row">
-          <span>Data Labeling</span>
-          <div class="bar-wrap"><span class="bar-fill" style="width: 90%"></span></div>
-          <span class="skill-percent">90%</span>
-        </div>
-        <div class="skill-row">
-          <span>Annotation</span>
-          <div class="bar-wrap"><span class="bar-fill" style="width: 88%"></span></div>
-          <span class="skill-percent">88%</span>
-        </div>
-        <div class="skill-row">
-          <span>LSTM</span>
-          <div class="bar-wrap"><span class="bar-fill" style="width: 82%"></span></div>
-          <span class="skill-percent">82%</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<section id="skills-chart" class="section">
-  <div class="glass box skills-chart-box">
-    <div class="skills-chart-header">
-      <h2>Skill Focus</h2>
-      <p>Core technical strengths and experience across AI, vision systems, and model deployment.</p>
-    </div>
-
-    <div class="skills-chart-grid">
-      <div class="chart-summary">
-        <span class="chart-pill">Top Strength</span>
-        <p>Python, OpenCV, and YOLO are the foundation of my AI development work, with strong practical experience building production-ready systems.</p>
-        <div class="chart-tags">
-          <span>AI Research</span>
-          <span>Computer Vision</span>
-          <span>Model Deployment</span>
-          <span>Deep Learning</span>
-        </div>
-      </div>
-
-      <div class="chart-card">
-        <canvas id="skillsChart"></canvas>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- EXPERIENCE -->
-<section id="experience" class="section">
-  <div class="glass box experience-box">
-    <div class="section-header">
-      <h2>Professional Experience</h2>
-      <p>Hands-on experience building AI systems and contributing to innovative tech projects.</p>
-    </div>
-
-    <div class="experience-timeline">
-      <!-- AI Intern -->
-      <div class="experience-card">
-        <div class="experience-icon">🧠</div>
-        <div class="experience-content">
-          <h3>AI Engineer Intern</h3>
-          <p class="company">NCAI Lab Peshawar</p>
-          <ul class="experience-points">
-            <li>Developed AI-based research and real-world computer vision systems</li>
-            <li>Worked on deep learning pipelines and model optimization</li>
-            <li>Collaborated with research team on cutting-edge AI projects</li>
-          </ul>
-          <div class="tech-tags">
-            <span>Python</span>
-            <span>TensorFlow</span>
-            <span>Computer Vision</span>
-            <span>Deep Learning</span>
-          </div>
-        </div>
-      </div>
-
-      <!-- Python Intern -->
-      <div class="experience-card">
-        <div class="experience-icon">🐍</div>
-        <div class="experience-content">
-          <h3>Python Developer Intern</h3>
-          <p class="company">Codsoft</p>
-          <ul class="experience-points">
-            <li>Built Python-based automation and ML mini-projects</li>
-            <li>Developed data processing pipelines and utilities</li>
-            <li>Contributed to multiple hackathon projects</li>
-          </ul>
-          <div class="tech-tags">
-            <span>Python</span>
-            <span>Automation</span>
-            <span>Machine Learning</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-<!-- PROJECTS -->
-<section id="projects" class="section">
-  <div class="glass box projects-box">
-    <div class="section-header">
-      <h2>Featured Projects</h2>
-      <p>Selection of innovative AI and computer vision projects that showcase problem-solving and technical expertise.</p>
-    </div>
-
-    <div class="projects-grid">
-      <!-- Self Driving Car -->
-      <div class="project-card-new">
-        <div class="project-header">
-          <span class="project-icon">🚗</span>
-          <span class="project-badge">Final Year Project</span>
-        </div>
-        <h3>AI-Based Self-Driving Car</h3>
-        <p>Designed autonomous driving system using CNN and OpenCV. Implemented lane detection, object recognition, and decision-making module for vehicle control.</p>
-        <div class="project-tech">
-          <span>CNN</span>
-          <span>OpenCV</span>
-          <span>Python</span>
-          <span>Computer Vision</span>
-        </div>
-      </div>
-
-      <!-- Weather -->
-      <div class="project-card-new">
-        <div class="project-header">
-          <span class="project-icon">⛅</span>
-          <span class="project-badge">Deployment</span>
-        </div>
-        <h3>Weather Forecasting System</h3>
-        <p>Developed LSTM-based time series prediction model for weather analysis. Integrated Flask backend for real-time web deployment with interactive UI.</p>
-        <div class="project-tech">
-          <span>LSTM</span>
-          <span>Flask</span>
-          <span>Time Series</span>
-          <span>Web App</span>
-        </div>
-      </div>
-
-      <!-- Agriculture -->
-      <div class="project-card-new">
-        <div class="project-header">
-          <span class="project-icon">🌱</span>
-          <span class="project-badge">Computer Vision</span>
-        </div>
-        <h3>Nutrient Deficiency Detection</h3>
-        <p>Built YOLOv11 model for 9-class banana plant disease detection. Achieved high accuracy in identifying plant health issues for agricultural solutions.</p>
-        <div class="project-tech">
-          <span>YOLOv11</span>
-          <span>Object Detection</span>
-          <span>Agriculture</span>
-        </div>
-      </div>
-
-      <!-- Smart Parking -->
-      <div class="project-card-new">
-        <div class="project-header">
-          <span class="project-icon">🅿️</span>
-          <span class="project-badge">IoT</span>
-        </div>
-        <h3>Smart Parking System</h3>
-        <p>Implemented OpenCV-based vehicle detection and parking automation system. Real-time parking space management with automated alerts.</p>
-        <div class="project-tech">
-          <span>OpenCV</span>
-          <span>Detection</span>
-          <span>IoT</span>
-          <span>Real-time</span>
-        </div>
-      </div>
-
-      <!-- Fight Detection -->
-      <div class="project-card-new">
-        <div class="project-header">
-          <span class="project-icon">🥊</span>
-          <span class="project-badge">Security</span>
-        </div>
-        <h3>Fight Detection System</h3>
-        <p>Developed real-time violence detection using deep learning and video analysis. Deployed for security surveillance and safety monitoring.</p>
-        <div class="project-tech">
-          <span>Deep Learning</span>
-          <span>Video Analysis</span>
-          <span>Security</span>
-        </div>
-      </div>
-
-      <!-- Face Mask -->
-      <div class="project-card-new">
-        <div class="project-header">
-          <span class="project-icon">😷</span>
-          <span class="project-badge">Classification</span>
-        </div>
-        <h3>Face Mask Detection</h3>
-        <p>Built CNN-based model for real-time face mask detection system. Achieved 98% accuracy for automated health compliance monitoring.</p>
-        <div class="project-tech">
-          <span>CNN</span>
-          <span>Classification</span>
-          <span>Real-time</span>
-        </div>
-      </div>
-
-      <!-- Road Damage -->
-      <div class="project-card-new">
-        <div class="project-header">
-          <span class="project-icon">🛣️</span>
-          <span class="project-badge">Infrastructure</span>
-        </div>
-        <h3>Road Damage Detection</h3>
-        <p>Worked on pothole and road crack detection system for C&W KPK. Automated infrastructure monitoring for maintenance and safety assessment.</p>
-        <div class="project-tech">
-          <span>Detection</span>
-          <span>Infrastructure</span>
-          <span>Automation</span>
-        </div>
-      </div>
-
-      <!-- Weapon Detection -->
-      <div class="project-card-new">
-        <div class="project-header">
-          <span class="project-icon">🔫</span>
-          <span class="project-badge">Security</span>
-        </div>
-        <h3>Weapon & FIR Detection</h3>
-        <p>Developed AI-based system for weapon detection and FIR-related monitoring. Advanced computer vision for public safety and law enforcement.</p>
-        <div class="project-tech">
-          <span>Detection</span>
-          <span>Public Safety</span>
-          <span>AI</span>
-        </div>
-      </div>
-
-      <!-- Flood Report -->
-      <div class="project-card-new">
-        <div class="project-header">
-          <span class="project-icon">🌊</span>
-          <span class="project-badge">Analysis</span>
-        </div>
-        <h3>KP Flash Floods Report</h3>
-        <p>Prepared technical analysis report on KP flood events and impact assessment. Data-driven insights for disaster management and prevention.</p>
-        <div class="project-tech">
-          <span>Data Analysis</span>
-          <span>Reports</span>
-          <span>Disaster Management</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
- <!-- ACHIEVEMENTS -->
-<!-- ACHIEVEMENTS -->
-<section id="achievements" class="section">
-  <div class="glass box">
-
-    <h2>Achievements</h2>
-
-    <div class="grid">
-
-      <!-- National Science Project Exhibition -->
-      <div class="card project-card">
-        <div class="project-icon">🏆</div>
-        <h3>National Science Project Exhibition 2024</h3>
-        <h4>ORIC, AWKUM Mardan</h4>
-        <p>Certificate of Participation — 2024</p>
-        <p>Showcased innovative AI/ML-based project at university-level science exhibition</p>
-      </div>
-
-      <!-- Softcom 25 Awards -->
-      <div class="card project-card">
-        <div class="project-icon">🥈</div>
-        <h3>Awards — Softcom 25 (GIKI)</h3>
-        <p>2nd Position — Poster Design Competition</p>
-        <p>3rd Position — Speed Coding Competition</p>
-        <p>Participation — Hackathon Softcom 25</p>
-      </div>
-
-    </div>
-
-  </div>
-</section>
-
-<!-- LEADERSHIP & CERTIFICATIONS -->
-<section id="leadership" class="section">
-  <div class="glass box leadership-box">
-    <div class="section-header">
-      <h2>Leadership & Certifications</h2>
-      <p>Proven leadership experience and professional certifications from top institutions.</p>
-    </div>
-
-    <div class="leadership-grid">
-      <!-- Leadership Column -->
-      <div class="leadership-column">
-        <h3 class="column-title">Leadership Roles</h3>
-        <div class="leadership-items">
-          <div class="leadership-item">
-            <div class="leadership-icon">🎯</div>
-            <h4>Coordinator</h4>
-            <p class="role-org">Technology & Innovation Society</p>
-            <p>Led technical workshops and managed events for 200+ students across the university.</p>
-          </div>
-
-          <div class="leadership-item">
-            <div class="leadership-icon">🤝</div>
-            <h4>Co-Founder</h4>
-            <p class="role-org">University Help Desk</p>
-            <p>Developed a comprehensive support system serving 600+ students across departments.</p>
-          </div>
-
-          <div class="leadership-item">
-            <div class="leadership-icon">🚀</div>
-            <h4>Head Organizer</h4>
-            <p class="role-org">Zindigi Prize</p>
-            <p>Managed event operations, team coordination, and startup engagement activities.</p>
-          </div>
-
-          <div class="leadership-item">
-            <div class="leadership-icon">🎓</div>
-            <h4>Chapter Head</h4>
-            <p class="role-org">AWKUM</p>
-            <p>Represented and coordinated chapter-level activities and student initiatives.</p>
-          </div>
-
-          <div class="leadership-item">
-            <div class="leadership-icon">☁️</div>
-            <h4>Event Head</h4>
-            <p class="role-org">AWS Community</p>
-            <p>Organized technical sessions, workshops, and community events on cloud computing.</p>
-          </div>
-        </div>
-      </div>
-
-      <!-- Certifications Column -->
-      <div class="certifications-column">
-        <h3 class="column-title">Certifications</h3>
-        <div class="cert-items">
-          <div class="cert-item">
-            <div class="cert-icon">🏆</div>
-            <h4>CS50's Introduction to AI with Python</h4>
-            <p class="cert-org">Harvard University</p>
-            <p class="cert-desc">Comprehensive introduction to AI and Python programming from world-class institution.</p>
-          </div>
-
-          <div class="cert-item">
-            <div class="cert-icon">🐍</div>
-            <h4>Programming for Everybody</h4>
-            <p class="cert-org">Coursera</p>
-            <p class="cert-desc">Fundamental Python programming skills and best practices.</p>
-          </div>
-
-          <div class="cert-item">
-            <div class="cert-icon">💻</div>
-            <h4>Supercomputers & AI</h4>
-            <p class="cert-org">Catalyst GIK — 04 July 2024</p>
-            <p class="cert-desc">Role of supercomputers and AI in entrepreneurial institutes.</p>
-          </div>
-
-          <div class="cert-item">
-            <div class="cert-icon">🧠</div>
-            <h4>Critical Thinking</h4>
-            <p class="cert-org">Catalyst GIK — 02 July 2024</p>
-            <p class="cert-desc">Creative and critical thinking for effective problem solving.</p>
-          </div>
-
-          <div class="cert-item">
-            <div class="cert-icon">📖</div>
-            <h4>Storytelling & Investment</h4>
-            <p class="cert-org">Catalyst GIK — 04 July 2024</p>
-            <p class="cert-desc">Effective storytelling and investment communication strategies.</p>
-          </div>
-
-          <div class="cert-item">
-            <div class="cert-icon">⚙️</div>
-            <h4>Problem Solving & Decision Making</h4>
-            <p class="cert-org">Catalyst GIK — 26 June 2024</p>
-            <p class="cert-desc">Advanced techniques for problem solving and strategic decisions.</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section">
-  <div class="glass box contact-card">
-    <h2>Contact</h2>
-    <div class="contact-list">
-      <a href="mailto:waqaskhanwaqas713@gmail.com" class="contact-item">
-        <span class="contact-icon">📧</span>
-        <div class="contact-content">
-          <span class="contact-label">Email</span>
-          <span class="contact-value">waqaskhanwaqas713@gmail.com</span>
-        </div>
+  <header class="nav-wrap" id="site-nav">
+    <div class="nav-inner">
+      <a class="logo" href="#home" data-magnetic>
+        <span class="logo-brain" aria-hidden="true">
+          <svg viewBox="0 0 32 32"><path d="M10 9c-2 0-4 1.8-4 4.2 0 1.2.5 2.3 1.3 3C6.5 17 6 18.2 6 19.6 6 22 8.2 24 11 24c.7 0 1.4-.2 2-.5.6 1.5 2 2.5 3.7 2.5s3.1-1 3.7-2.5c.6.3 1.3.5 2 .5 2.8 0 5-2 5-4.4 0-1.4-.5-2.6-1.3-3.4.8-.7 1.3-1.8 1.3-3C27.4 10.8 25.4 9 23.2 9c-1.2 0-2.3.5-3.1 1.4C19.3 8.8 17.8 8 16 8c-1.6 0-3 .7-4 1.8C11.3 9.4 10.7 9 10 9Z" fill="none" stroke="url(#lg)" stroke-width="1.6"/><defs><linearGradient id="lg" x1="6" y1="8" x2="26" y2="24"><stop stop-color="#00E5FF"/><stop offset="1" stop-color="#A855F7"/></linearGradient></defs></svg>
+        </span>
+        <span class="logo-text">
+          <strong>Waqas Ahmad</strong>
+          <small>AI Engineer</small>
+        </span>
       </a>
-      <a href="https://github.com/waqasahmad713" target="_blank" rel="noreferrer" class="contact-item">
-        <span class="contact-icon">🐙</span>
-        <div class="contact-content">
-          <span class="contact-label">GitHub</span>
-          <span class="contact-value">github.com/waqasahmad713</span>
-        </div>
+
+      <nav class="nav" aria-label="Primary">
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link is-active">Home</a></li>
+          <li><a href="#about" class="nav-link">About</a></li>
+          <li><a href="#skills" class="nav-link">Skills</a></li>
+          <li><a href="#projects" class="nav-link">Projects</a></li>
+          <li><a href="#experience" class="nav-link">Experience</a></li>
+          <li><a href="#contact" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <a class="nav-cta magnetic" href="#contact" data-magnetic>
+        Let’s Talk
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22l-4-9-9-4 20-7Z"/></svg>
       </a>
-      <a href="https://www.linkedin.com/in/waqasahmad713" target="_blank" rel="noreferrer" class="contact-item">
-        <span class="contact-icon">💼</span>
-        <div class="contact-content">
-          <span class="contact-label">LinkedIn</span>
-          <span class="contact-value">waqasahmad713</span>
-        </div>
-      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </div>
-</section>
 
-<footer>
-  <p>© 2026 Waqas Ahmad AI Engineer</p>
-</footer>
+    <div class="mobile-menu" id="mobile-menu">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#experience">Experience</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
 
-<script src="script.js"></script>
+  <main>
+    <section class="home" id="home">
+      <div class="container">
+        <div class="home-hero">
+          <div class="orbit-portrait reveal-load" data-load="1">
+            <span class="orbit o1"></span>
+            <span class="orbit o2"></span>
+            <span class="orbit o3"></span>
+            <img id="portrait" src="assets/images/waqasetea.png" alt="Waqas Ahmad" width="280" height="280">
+          </div>
+
+          <div class="home-copy">
+            <p class="hello reveal-load" data-load="2">Hi, I’m Waqas Ahmad <span aria-hidden="true">👋</span></p>
+            <h1 class="grad-title reveal-load" data-load="3" id="hero-title">AI Engineer</h1>
+            <p class="role-line reveal-load" data-load="4">
+              <span class="role-kicker">Role</span>
+              <span id="typed-role">AI Engineer</span><span class="caret" aria-hidden="true"></span>
+            </p>
+            <p class="home-lead reveal-load" data-load="5" id="hero-headline">Building Intelligent Solutions with AI, Computer Vision & Machine Learning.</p>
+            <div class="hero-actions reveal-load" data-load="6">
+              <a class="btn btn-primary magnetic" href="#projects" data-magnetic>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M5 19 19 5M9 5h10v10"/></svg>
+                View My Work
+              </a>
+              <a class="btn btn-ghost magnetic" id="cv-link" href="assets/resume/Waqas_Ahmad.pdf" download data-magnetic>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M12 4v12m0 0 4-4m-4 4-4-4M5 20h14"/></svg>
+                Download CV
+              </a>
+            </div>
+          </div>
+
+          <div class="brain-stage reveal-load" data-load="7">
+            <canvas id="network-canvas" aria-hidden="true"></canvas>
+            <div class="pedestal"></div>
+          </div>
+        </div>
+
+        <div class="home-stats reveal" id="home-stats"></div>
+
+        <div class="home-board">
+          <article class="glass-card reveal">
+            <header class="card-head">
+              <h2>Tech Stack</h2>
+            </header>
+            <div class="tech-icons" id="home-tech"></div>
+          </article>
+
+          <article class="glass-card reveal featured-col">
+            <header class="card-head">
+              <h2>Featured Projects</h2>
+              <a href="#projects">View All →</a>
+            </header>
+            <div class="home-projects" id="home-projects"></div>
+          </article>
+
+          <article class="glass-card reveal">
+            <header class="card-head">
+              <h2>Experience</h2>
+            </header>
+            <div class="home-exp" id="home-exp"></div>
+          </article>
+        </div>
+
+        <div class="home-bottom">
+          <article class="glass-card reveal">
+            <h2>My AI Focus</h2>
+            <div class="focus-pills">
+              <span>Computer Vision</span>
+              <span>Deep Learning</span>
+              <span>NLP</span>
+              <span>AI Solutions</span>
+            </div>
+          </article>
+          <blockquote class="quote-card reveal">
+            <p>“Artificial Intelligence is not just technology, it’s a new way of thinking.”</p>
+            <cite>— Waqas Ahmad</cite>
+          </blockquote>
+          <article class="glass-card cta-card reveal">
+            <h2>Let’s Build Something Amazing</h2>
+            <a class="btn btn-primary" href="#contact">Contact Me</a>
+          </article>
+        </div>
+      </div>
+      <a class="scroll-hint" href="#about" aria-label="Scroll down">
+        <span></span>
+      </a>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span>01</span> About</p>
+          <h2>Building vision systems that see the real world.</h2>
+        </header>
+
+        <div class="about-grid">
+          <div class="about-left reveal">
+            <p class="about-text" id="about-text"></p>
+          </div>
+          <div class="about-right">
+            <div class="stat-grid" id="stat-grid"></div>
+            <div class="journey" id="journey"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="skills">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span>02</span> Skills</p>
+          <h2>A focused stack for detection, learning, and deployment.</h2>
+        </header>
+        <div class="skill-bars reveal" id="skill-bars"></div>
+        <div id="skills-root"></div>
+      </div>
+    </section>
+
+    <section class="section featured-section" id="featured">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span>03</span> Featured Project</p>
+          <h2>A perception stack built for autonomous driving.</h2>
+        </header>
+
+        <article class="featured reveal" id="featured-root">
+          <div class="featured-copy" id="featured-copy"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="projects">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span>04</span> Projects</p>
+          <h2>Selected systems in computer vision and applied ML.</h2>
+        </header>
+        <div class="project-filters reveal" id="project-filters"></div>
+        <div class="projects-grid" id="projects-grid"></div>
+      </div>
+    </section>
+
+    <section class="section" id="experience">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span>05</span> Experience</p>
+          <h2>From research labs to applied AI development.</h2>
+        </header>
+        <div class="timeline" id="timeline"></div>
+
+        <article class="education-card reveal" id="education">
+          <div class="edu-net" aria-hidden="true"></div>
+          <p class="eyebrow"><span>06</span> Education</p>
+          <div id="education-body"></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="github">
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span>07</span> GitHub</p>
+          <h2>Public work and repositories.</h2>
+        </header>
+        <div class="github-panel reveal" id="github-panel">
+          <p class="github-fallback">Loading public GitHub data…</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="more">
+      <div class="container two-col">
+        <div>
+          <header class="section-head reveal">
+            <p class="eyebrow">Recognition</p>
+            <h2>Achievements</h2>
+          </header>
+          <div class="info-stack" id="achievements"></div>
+        </div>
+        <div>
+          <header class="section-head reveal">
+            <p class="eyebrow">Leadership</p>
+            <h2>Roles & certifications</h2>
+          </header>
+          <div class="lead-grid">
+            <div id="leadership"></div>
+            <div id="certs"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-glow" aria-hidden="true"></div>
+      <div class="container">
+        <header class="section-head reveal">
+          <p class="eyebrow"><span>08</span> Contact</p>
+          <h2>Let’s Build Something Intelligent.</h2>
+        </header>
+
+        <div class="contact-grid">
+          <div class="contact-channels reveal">
+            <a class="channel magnetic" id="mail-channel" href="mailto:waqaskhanwaqas713@gmail.com" data-magnetic>
+              <span>Email</span>
+              <strong id="mail-label">waqaskhanwaqas713@gmail.com</strong>
+            </a>
+            <a class="channel magnetic" id="li-channel" href="https://www.linkedin.com/in/waqasahmad713" target="_blank" rel="noopener noreferrer" data-magnetic>
+              <span>LinkedIn</span>
+              <strong>waqasahmad713</strong>
+            </a>
+            <a class="channel magnetic" id="gh-channel" href="https://github.com/waqasahmad713" target="_blank" rel="noopener noreferrer" data-magnetic>
+              <span>GitHub</span>
+              <strong>waqasahmad713</strong>
+            </a>
+            <a class="channel magnetic" id="cv-channel" href="assets/resume/Waqas_Ahmad.pdf" download data-magnetic>
+              <span>Resume</span>
+              <strong>Download CV</strong>
+            </a>
+          </div>
+
+          <form class="contact-form reveal" id="contact-form" novalidate>
+            <label>
+              Name
+              <input type="text" name="name" autocomplete="name" required>
+            </label>
+            <label>
+              Email
+              <input type="email" name="email" autocomplete="email" required>
+            </label>
+            <label>
+              Message
+              <textarea name="message" rows="5" required></textarea>
+            </label>
+            <button class="btn btn-primary btn-full magnetic" type="submit" data-magnetic>
+              Send message
+              <span class="btn-arrow">→</span>
+            </button>
+            <p class="form-note" id="form-note">Opens your email client with the message ready to send.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-line" aria-hidden="true"></div>
+    <div class="container footer-inner">
+      <p>© <span id="year">2026</span> Waqas Ahmad. All rights reserved.</p>
+      <p>AI Engineer | Computer Vision | Machine Learning</p>
+    </div>
+  </footer>
+
+  <script src="js/content.js"></script>
+  <script src="js/script.js"></script>
 </body>
 </html>
-
-
